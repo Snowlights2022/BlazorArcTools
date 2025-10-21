@@ -362,5 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-#Ignore Publish folder
-/BlazorArcTools/PublishToFolder/*.*
+# Ignore Publish folder
+PublishToFolder/*.*
