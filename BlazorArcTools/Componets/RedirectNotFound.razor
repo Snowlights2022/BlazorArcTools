@@ -1,0 +1,7 @@
+﻿@code {
+    [Inject] NavigationManager Manager { get; set; } = default!;
+    protected override void OnInitialized()
+    {
+        Manager.NavigateTo("/notfound");
+    }
+}
