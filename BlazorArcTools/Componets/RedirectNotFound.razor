@@ -1,7 +1,21 @@
 ﻿@code {
     [Inject] NavigationManager Manager { get; set; } = default!;
-    protected override void OnInitialized()
+
+    private bool IsRedirected;
+
+    //protected override void OnInitialized()
+    //{
+    //    Manager.NavigateTo("/notfound");
+    //}
+
+    protected override Task OnAfterRenderAsync(bool FirstRender)
     {
-        Manager.NavigateTo("/notfound");
+        if (FirstRender && !IsRedirected)
+        {
+            IsRedirected = true;
+            // 使用客户端导航（forceLoad: false），并替换历史项，避免额外回退记录
+            Manager.NavigateTo("/notfound", forceLoad: false);
+        }
+        return Task.CompletedTask;
     }
 }
