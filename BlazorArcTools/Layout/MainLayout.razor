@@ -8,22 +8,22 @@
 <MudLayout>
     <MudAppBar Elevation="1">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudText Typo="Typo.h5" Class="ml-3">ArcaeaTools</MudText>
+        <MudText Typo="Typo.h5" Class="ml-3">Application</MudText>
         <MudSpacer />
         <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
     </MudAppBar>
     <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
         <MudPaper Width="250px" Class="py-3" Elevation="0">
     <MudNavMenu>
-        <MudText Typo="Typo.h6" Class="px-4">Arcaea工具箱</MudText>
-        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Powered by C# Blazor & Cloudflare Pages.</MudText>
+        <MudText Typo="Typo.h6" Class="px-4">My Application</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Secondary Text</MudText>
         <MudDivider Class="my-2"/>
         <MudNavLink Href="/weather">weather</MudNavLink>
-        <MudNavLink Href="/">Home</MudNavLink>
+        <MudNavLink Href="/servers">Servers</MudNavLink>
         <MudNavLink Href="/billing" Disabled="true">Billing</MudNavLink>
         <MudNavGroup Title="Settings" Expanded="true">
-            <MudNavLink Href="/users" Disabled="true" >Users</MudNavLink>
-            <MudNavLink Href="/security" Disabled="true">Security</MudNavLink>
+            <MudNavLink Href="/users">Users</MudNavLink>
+            <MudNavLink Href="/security">Security</MudNavLink>
         </MudNavGroup>
         <MudNavLink Href="/about">About</MudNavLink>
     </MudNavMenu>

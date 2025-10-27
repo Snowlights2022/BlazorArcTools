@@ -14,7 +14,6 @@ namespace BlazorArcTools
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddMudServices();//增加MudBlazor服务
-            builder.Services.AddScoped<BlazorArcTools.Services.NavigationHistoryService>();
 
             await builder.Build().RunAsync();
         }

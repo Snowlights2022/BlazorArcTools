@@ -1,6 +1,6 @@
-﻿
+﻿@page "/notfound"
 @inject NavigationManager NavigationManager
-@inject BlazorArcTools.Services.NavigationHistoryService NavHist
+@inject IJSRuntime JS
 
 <MudText Typo="Typo.h6">
     你寻找的页面不存在。请点击按钮返回上一页或者重新加载到主页面。
@@ -22,8 +22,13 @@
 @code {
     async Task Button1OnClick()
     {
-        var ok = NavHist.GoBack();
-        if (!ok)
+        //先检查 history.length,如果>1则调用history.back(),否则回到首页作为兜底
+        var len = await JS.InvokeAsync<int>("eval", "history.length");
+        if (len > 1)
+        {
+            await JS.InvokeVoidAsync("history.back");
+        }
+        else
         {
             NavigationManager.NavigateTo("/");
         }
